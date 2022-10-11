@@ -1,13 +1,10 @@
-﻿using CarDealer.Application.ViewModel;
-using CarDealer.Domain.Model;
+﻿using CarDealer.Application.Interface.Base;
+using CarDealer.Application.ViewModel;
 
 namespace CarDealer.Application.Interface
 {
-    public interface IUserAppService
+    public interface IUserAppService : IBaseAppService<UserViewModel>
     {
-        Task<int> Insert(UserViewModel user);
-        Task<int> Update(UserViewModel user);
-        Task<int> Delete(UserViewModel user);
         Task<UserViewModel> GetByName(string name);
     }
 }

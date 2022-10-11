@@ -1,13 +1,10 @@
-﻿using CarDealer.Application.ViewModel;
-using CarDealer.Domain.Model;
+﻿using CarDealer.Application.Interface.Base;
+using CarDealer.Application.ViewModel;
 
 namespace CarDealer.Application.Interface
 {
-    public interface ICarAppService
+    public interface ICarAppService : IBaseAppService<CarViewModel>
     {
-        Task<int> Insert(CarViewModel car);
-        Task<int> Update(CarViewModel car);
-        Task<int> Delete(CarViewModel car);
         Task<IEnumerable<CarViewModel>> GetAll();
     }
 }

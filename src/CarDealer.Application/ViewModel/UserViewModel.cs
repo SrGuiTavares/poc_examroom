@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarDealer.Application.ViewModel
+﻿namespace CarDealer.Application.ViewModel
 {
-    public class UserViewModel
+    public class UserViewModel : BaseViewModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
         public string Password { get; set; }
     }
 }

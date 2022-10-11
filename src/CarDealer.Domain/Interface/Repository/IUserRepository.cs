@@ -1,12 +1,10 @@
-﻿using CarDealer.Domain.Model;
+﻿using CarDealer.Domain.Interface.Repository.Base;
+using CarDealer.Domain.Model;
 
 namespace CarDealer.Domain.Interface.Repository
 {
-    public interface IUserRepository
+    public interface IUserRepository : IBaseRepository<User>
     {
-        Task<int> Insert(User user);
-        Task<int> Update(User user);
-        Task<int> Delete(User user);
         Task<User> GetByName(string name);
     }
 }

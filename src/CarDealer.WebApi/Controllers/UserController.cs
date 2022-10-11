@@ -1,13 +1,11 @@
 ﻿using CarDealer.Application.Interface;
 using CarDealer.Application.ViewModel;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SecureIdentity.Password;
 
 namespace CarDealer.WebApi.Controllers
 {
     [Route("User")]
-    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserAppService _userAppService;

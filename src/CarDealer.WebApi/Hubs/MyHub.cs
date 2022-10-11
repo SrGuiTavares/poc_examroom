@@ -4,7 +4,7 @@ namespace CarDealer.WebApi.Hubs
 {
     public class MyHub : Hub
     {
-        public  async IAsyncEnumerable<DateTime> Streaming(CancellationToken cancellationToken)
+        public async IAsyncEnumerable<DateTime> Streaming(CancellationToken cancellationToken)
         {
             while (true)
             {

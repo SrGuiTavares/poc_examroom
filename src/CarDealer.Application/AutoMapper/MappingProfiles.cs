@@ -1,19 +1,15 @@
 ﻿using AutoMapper;
 using CarDealer.Application.ViewModel;
 using CarDealer.Domain.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+using CarDealer.Domain.Model.Base;
 
 namespace CarDealer.Application.AutoMapper
 {
-    public class MappingProfiles: Profile
+    public class MappingProfiles : Profile
     {
         public MappingProfiles()
         {
+            CreateMap<BaseModel, BaseViewModel>().ReverseMap();
             CreateMap<Car, CarViewModel>().ReverseMap();
             CreateMap<User, UserViewModel>().ReverseMap();
         }

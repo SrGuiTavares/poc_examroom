@@ -1,12 +1,10 @@
-﻿using CarDealer.Domain.Model;
+﻿using CarDealer.Domain.Interface.Service.Base;
+using CarDealer.Domain.Model;
 
 namespace CarDealer.Domain.Interface.Service
 {
-    public  interface ICarService
+    public interface ICarService : IBaseService<Car>
     {
-        Task<int> Insert(Car car);
-        Task<int> Update(Car car);
-        Task<int> Delete(Car car);
         Task<IEnumerable<Car>> GetAll();
     }
 }

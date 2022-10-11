@@ -1,12 +1,10 @@
 ﻿using CarDealer.Application.Interface;
 using CarDealer.Application.ViewModel;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarDealer.WebApi.Controllers
 {
     [Route("Car")]
-    [Authorize]
     public class CarController : ControllerBase
     {
         private readonly ICarAppService _carAppService;

@@ -1,12 +1,10 @@
-﻿using CarDealer.Domain.Model;
+﻿using CarDealer.Domain.Interface.Service.Base;
+using CarDealer.Domain.Model;
 
 namespace CarDealer.Domain.Interface.Service
 {
-    public interface IUserService
+    public interface IUserService : IBaseService<User>
     {
-        Task<int> Insert(User user);
-        Task<int> Update(User user);
-        Task<int> Delete(User user);
         Task<User> GetByName(string name);
     }
 }

@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CarDealer.Domain.Model.Base;
 
 namespace CarDealer.Domain.Model
 {
-    public class Car
+    public class Car : BaseModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
         public decimal Price { get; set; }
     }
 }

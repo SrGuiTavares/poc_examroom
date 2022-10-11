@@ -67,20 +67,20 @@ builder.Services.AddTransient<TokenService>();
 builder.Services.AddSignalR();
 
 
-builder.Services.AddSwaggerGen( c =>
+builder.Services.AddSwaggerGen(c =>
     {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarDealer", Version = "v1" });
+        c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarDealer", Version = "v1" });
 
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-    {
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer",
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "JWT Authorization header using the Bearer scheme.",
-    });
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+        c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+        {
+            Name = "Authorization",
+            Type = SecuritySchemeType.ApiKey,
+            Scheme = "Bearer",
+            BearerFormat = "JWT",
+            In = ParameterLocation.Header,
+            Description = "JWT Authorization header using the Bearer scheme.",
+        });
+        c.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                     {
                           new OpenApiSecurityScheme
@@ -94,7 +94,7 @@ builder.Services.AddSwaggerGen( c =>
                          new string[] {}
                     }
                 });
-});
+    });
 
 
 
