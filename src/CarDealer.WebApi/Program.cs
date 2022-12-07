@@ -97,6 +97,17 @@ builder.Services.AddSwaggerGen(c =>
     });
 
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "MyPolicy",
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:4200")
+                                                .AllowAnyHeader()
+                                                .AllowAnyMethod();
+                      });
+});
+
 
 var app = builder.Build();
 
@@ -111,6 +122,8 @@ if (app.Environment.IsDevelopment())
 app.MapHub<MyHub>("/chat");
 
 app.UseHttpsRedirection();
+
+app.UseCors("MyPolicy");
 
 app.UseAuthentication();
 
